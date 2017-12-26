@@ -29,3 +29,11 @@
 	uglifyJs CommonsChunkPlugin
 	babel-loader
 	npm run build
+
+###提交三
+#关键词
+	生成多页面
+	多入口
+	templates	index.html / mobile.html
+	生成hash名称的script 来防止缓存
+	output filename: [name].[hash].js 

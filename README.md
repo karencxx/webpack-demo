@@ -37,3 +37,11 @@
 	templates	index.html / mobile.html
 	生成hash名称的script 来防止缓存
 	output filename: [name].[hash].js 
+
+
+###提交四
+#关键词
+	start命令指定 webpack.dev.js
+	区分生产环境和开发环境 
+	保留通用配置 webpack.common.js
+	webpack-merge

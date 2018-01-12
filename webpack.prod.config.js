@@ -12,7 +12,11 @@ var APP_PATH = path.resolve(ROOT_PATH, 'app')
 var BUILD_PATH = path.resolve(ROOT_PATH, 'build')
 var TEM_PATH = path.resolve(ROOT_PATH, 'templates')  //3版 template路径，可以让htmlwebpackplugin生成多个文件
 
-module.exports = {
+/*4版*/
+const merge = require('webpack-merge')
+const common = require('./webpack.common.js')
+
+module.exports = merge(common, {
 	/**项目的文件夹 可以直接用文件夹名称
 	*	默认会找index.js 也可以确定是哪个文件名
 	*/
@@ -89,7 +93,7 @@ module.exports = {
 		 * throw new Error(`Deprecation notice: CommonsChunkPlugin now only takes a 
 		 *	single argument. Either an options
 		 */
-
+		//多个html公用一个js文件(chunk)
 		new webpack.optimize.CommonsChunkPlugin({name: "vendor", filename:"vendor.bundle.js"})
 	]
-}
+})
